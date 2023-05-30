@@ -12,7 +12,7 @@ DATASET_OTHER_EXAMPLE_DICT = {
     "target": ["first text", "second text"],
 }
 
-model = BaseModel.create("distilgpt2")
+model = BaseModel.create("flan_lora")
 
 
 def test_text_gpt2():

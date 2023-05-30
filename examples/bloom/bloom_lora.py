@@ -11,5 +11,3 @@ output = model.generate(texts=["Why LLM models are becoming so important?"])
 print("Generated output by the model: {}".format(output))
 # Save the model
 model.save("./bloom_weights")
-
-# If you want to load the model just do BaseModel.load("./distilgpt2_weights")

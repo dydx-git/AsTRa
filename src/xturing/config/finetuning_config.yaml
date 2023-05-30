@@ -89,6 +89,12 @@ distilgpt2_lora:
   num_train_epochs: 3
   batch_size: 16
 
+google/flan-t5-xxl:
+  learning_rate: 3e-4
+  num_train_epochs: 3
+  batch_size: 8
+  max_length: 2048
+
 galactica:
   learning_rate: 5e-5
   weight_decay: 0.01

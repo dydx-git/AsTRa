@@ -12,6 +12,7 @@ from .cerebras_engine import (
     CerebrasLoraInt8Engine,
 )
 from .distilgpt2_engine import DistilGPT2Engine, DistilGPT2LoraEngine
+from .t5_engine import FlanSmallLoraEngine
 from .galactica_engine import (
     GalacticaEngine,
     GalacticaInt8Engine,
@@ -30,6 +31,7 @@ from .llama_engine import (
 from .opt_engine import OPTEngine, OPTInt8Engine, OPTLoraEngine, OPTLoraInt8Engine
 
 BaseEngine.add_to_registry(DistilGPT2Engine.config_name, DistilGPT2Engine)
+BaseEngine.add_to_registry(FlanSmallLoraEngine.config_name, FlanSmallLoraEngine)
 BaseEngine.add_to_registry(DistilGPT2LoraEngine.config_name, DistilGPT2LoraEngine)
 BaseEngine.add_to_registry(GPTJEngine.config_name, GPTJEngine)
 BaseEngine.add_to_registry(GPTJLoraEngine.config_name, GPTJLoraEngine)

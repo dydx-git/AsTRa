@@ -2,6 +2,7 @@ from .base import BaseModel
 from .bloom import Bloom, BloomInt8, BloomLora, BloomLoraInt8
 from .cerebras import Cerebras, CerebrasInt8, CerebrasLora, CerebrasLoraInt8
 from .distilgpt2 import DistilGPT2, DistilGPT2Lora
+from .flan import FlanLora
 from .galactica import Galactica, GalacticaInt8, GalacticaLora, GalacticaLoraInt8
 from .gpt2 import GPT2, GPT2Int8, GPT2Lora, GPT2LoraInt8
 from .gptj import GPTJ, GPTJInt8, GPTJLora, GPTJLoraInt8
@@ -11,6 +12,7 @@ from .stable_diffusion import StableDiffusion
 
 BaseModel.add_to_registry(DistilGPT2.config_name, DistilGPT2)
 BaseModel.add_to_registry(DistilGPT2Lora.config_name, DistilGPT2Lora)
+BaseModel.add_to_registry(FlanLora.config_name, FlanLora)
 BaseModel.add_to_registry(GPT2.config_name, GPT2)
 BaseModel.add_to_registry(GPT2Lora.config_name, GPT2Lora)
 BaseModel.add_to_registry(GPT2Int8.config_name, GPT2Int8)

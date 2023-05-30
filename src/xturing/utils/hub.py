@@ -86,6 +86,7 @@ class ModelHub(Hub):
         "distilgpt2": make_model_url("distilgpt2"),
         "distilgpt2_lora": make_model_url("distilgpt2_lora"),
         "llama_lora": make_model_url("llama_lora"),
+        "flan_lora": make_model_url("google/flan-t5-small"),
         "distilgpt2_lora_finetuned_alpaca": make_model_url(
             "distilgpt2_lora_finetuned_alpaca"
         ),

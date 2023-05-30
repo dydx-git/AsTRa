@@ -12,7 +12,6 @@ from xturing.config.read_config import load_config
 from xturing.datasets.instruction_dataset import InstructionDataset
 from xturing.datasets.text_dataset import TextDataset
 from xturing.engines.base import BaseEngine
-from xturing.engines.causal import CausalLoraEngine
 from xturing.models import BaseModel
 from xturing.preprocessors.base import BasePreprocessor
 from xturing.trainers.base import BaseTrainer
@@ -28,22 +27,19 @@ class CausalModel(BaseModel):
         self.engine = BaseEngine.create(engine, weights_path)
 
         self.model_name = engine.replace("_engine", "")
+        config_folder = Path(__file__).parent.parent / "config"
 
         # Finetuning config
         self.finetuning_args = load_config(
             model_name=self.model_name,
-            config_path=Path(__file__).parent.parent
-            / "config"
-            / "finetuning_config.yaml",
+            config_path=config_folder / "finetuning_config.yaml",
             data_class=FinetuningConfig,
         )
 
         # Generation config
         self.generation_args = load_config(
-            model_name=engine.replace("_engine", ""),
-            config_path=Path(__file__).parent.parent
-            / "config"
-            / "generation_config.yaml",
+            model_name=self.model_name,
+            config_path= config_folder / "generation_config.yaml",
             data_class=GenerationConfig,
         )
 

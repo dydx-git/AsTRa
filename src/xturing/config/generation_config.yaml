@@ -86,6 +86,13 @@ distilgpt2_lora:
   top_p: 0.92
   max_new_tokens: 256
 
+# google/flan-t5-xxl:
+google/flan-t5-small:
+  do_sample: true
+  top_k: 0
+  top_p: 0.92
+  max_new_tokens: 256
+
 # Contrastive search
 galactica:
   penalty_alpha: 0.6
