@@ -1,11 +1,7 @@
+from abc import ABC, abstractmethod
 from xturing.registry import BaseParent
 
-
-class BaseApi(BaseParent):
-    registry = {}
-
-
-class TextGenerationAPI:
+class TextGenerationAPI(ABC):
     config_name = "text_generation"
 
     def __init__(self, engine, api_key, request_batch_size=1, organization=None):
@@ -14,6 +10,7 @@ class TextGenerationAPI:
         self.organization = organization
         self.request_batch_size = request_batch_size
 
+    @abstractmethod
     def generate_text(self, *args, **kwargs):
         raise NotImplementedError(
             "generate_text method should be implemented in the child class, use specific api"

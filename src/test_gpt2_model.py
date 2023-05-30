@@ -1,9 +1,8 @@
 import tempfile
 from pathlib import Path
+from xturing.datasets.text_dataset import TextDataset
 
-from xturing.datasets import TextDataset
-from xturing.engines import GPT2LoraEngine
-from xturing.models import GPT2, BaseModel
+from xturing.models.base import BaseModel
 
 EXAMPLE_BASE_MODEL = "I want to be a part of the community"
 EXAMPLE_LORA_MODEL = "I want to be a part of the community"
