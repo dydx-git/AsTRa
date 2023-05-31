@@ -1,5 +1,5 @@
 from .base import BaseModel
-from .bloom import Bloom, BloomInt8, BloomLora, BloomLoraInt8
+from .bloom import Bloom, BloomInt8, BloomLora, BloomLoraInt8, BloomLargeLoraInt8
 from .cerebras import Cerebras, CerebrasInt8, CerebrasLora, CerebrasLoraInt8, CerebrasLargeLoraInt8
 from .distilgpt2 import DistilGPT2, DistilGPT2Lora
 from .flan import FlanSmallLora, FlanLargeLora, FlanUl2Lora
@@ -9,6 +9,7 @@ from .gptj import GPTJ, GPTJInt8, GPTJLora, GPTJLoraInt8
 from .llama import Llama, LlamaInt8, LlamaLora, LlamaLoraInt8, LlamaLoraInt4
 from .opt import OPT, OPTInt8, OPTLora, OPTLoraInt8
 from .stable_diffusion import StableDiffusion
+from .mpt import Mpt
 
 BaseModel.add_to_registry(DistilGPT2.config_name, DistilGPT2)
 BaseModel.add_to_registry(DistilGPT2Lora.config_name, DistilGPT2Lora)
@@ -45,4 +46,6 @@ BaseModel.add_to_registry(Bloom.config_name, Bloom)
 BaseModel.add_to_registry(BloomLora.config_name, BloomLora)
 BaseModel.add_to_registry(BloomInt8.config_name, BloomInt8)
 BaseModel.add_to_registry(BloomLoraInt8.config_name, BloomLoraInt8)
+BaseModel.add_to_registry(BloomLargeLoraInt8.config_name, BloomLargeLoraInt8)
 BaseModel.add_to_registry(StableDiffusion.config_name, StableDiffusion)
+BaseModel.add_to_registry(Mpt.config_name, Mpt)

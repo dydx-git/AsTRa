@@ -30,6 +30,7 @@ from .llama_engine import (
     LlamaLoraInt4Engine,
 )
 from .opt_engine import OPTEngine, OPTInt8Engine, OPTLoraEngine, OPTLoraInt8Engine
+from .mpt_engine import MPTEngine
 
 BaseEngine.add_to_registry(DistilGPT2Engine.config_name, DistilGPT2Engine)
 BaseEngine.add_to_registry(DistilGPT2LoraEngine.config_name, DistilGPT2LoraEngine)
@@ -62,6 +63,7 @@ BaseEngine.add_to_registry(CerebrasLoraEngine.config_name, CerebrasLoraEngine)
 BaseEngine.add_to_registry(CerebrasInt8Engine.config_name, CerebrasInt8Engine)
 BaseEngine.add_to_registry(CerebrasLoraInt8Engine.config_name, CerebrasLoraInt8Engine)
 BaseEngine.add_to_registry(CerebrasLargeLoraInt8Engine.config_name, CerebrasLargeLoraInt8Engine)
+BaseEngine.add_to_registry(MPTEngine.config_name, MPTEngine)
 BaseEngine.add_to_registry(BloomEngine.config_name, BloomEngine)
 BaseEngine.add_to_registry(BloomLoraEngine.config_name, BloomLoraEngine)
 BaseEngine.add_to_registry(BloomInt8Engine.config_name, BloomInt8Engine)
