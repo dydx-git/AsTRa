@@ -151,8 +151,7 @@ class Seq2SeqLoraEngine(Seq2SeqEngine):
             lora_dropout=0.1,
             bias="none",
             inference_mode=False,
-            base_model_name_or_path=self.base_model.__dict__.get("name_or_path", None),
-            task_type="SEQ_2_SEQ_LM"
+            base_model_name_or_path=self.base_model.__dict__.get("name_or_path", None)
         )
 
         if len(target_modules) == 1:

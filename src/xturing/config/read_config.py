@@ -24,7 +24,8 @@ def load_config(model_name: str, config_path: Union[Path, str], data_class: Base
     # Load default config for all the models
     config.update(yml_content["defaults"])
     # Replace default config params by the specific model params
-    config.update(yml_content[model_name])
+    if model_name in yml_content:
+        config.update(yml_content[model_name])
 
     config_object = data_class.parse_obj(config)
 
