@@ -12,7 +12,7 @@ DATASET_OTHER_EXAMPLE_DICT = {
     "target": ["first text", "second text"],
 }
 
-model = BaseModel.create("google/flan-ul2")
+model = BaseModel.create("cerebras_large_lora_int8")
 
 def test_text_gpt2():
     # Greedy search. Parameters are set to default config of HF

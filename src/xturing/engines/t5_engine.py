@@ -28,7 +28,7 @@ class FlanLargeLoraEngine(Seq2SeqLoraEngine):
         self.tokenizer.pad_token = self.tokenizer.eos_token
 
 class FlanUl2LoraEngine(Seq2SeqLoraEngine):
-    config_name: str = "google/flan-ul2"
+    config_name: str = "google/flan-ul2_engine"
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(

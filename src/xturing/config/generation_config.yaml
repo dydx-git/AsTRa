@@ -155,6 +155,11 @@ cerebras_lora_int8:
   max_new_tokens: 256
   do_sample: false
 
+# Greedy search
+cerebras_large_lora_int8:
+  max_new_tokens: 256
+  do_sample: false
+
 # Contrastive search
 bloom:
   penalty_alpha: 0.6

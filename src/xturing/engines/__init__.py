@@ -10,6 +10,7 @@ from .cerebras_engine import (
     CerebrasInt8Engine,
     CerebrasLoraEngine,
     CerebrasLoraInt8Engine,
+    CerebrasLargeLoraInt8Engine
 )
 from .distilgpt2_engine import DistilGPT2Engine, DistilGPT2LoraEngine
 from .t5_engine import FlanSmallLoraEngine, FlanLargeLoraEngine, FlanUl2LoraEngine
@@ -60,6 +61,7 @@ BaseEngine.add_to_registry(CerebrasEngine.config_name, CerebrasEngine)
 BaseEngine.add_to_registry(CerebrasLoraEngine.config_name, CerebrasLoraEngine)
 BaseEngine.add_to_registry(CerebrasInt8Engine.config_name, CerebrasInt8Engine)
 BaseEngine.add_to_registry(CerebrasLoraInt8Engine.config_name, CerebrasLoraInt8Engine)
+BaseEngine.add_to_registry(CerebrasLargeLoraInt8Engine.config_name, CerebrasLargeLoraInt8Engine)
 BaseEngine.add_to_registry(BloomEngine.config_name, BloomEngine)
 BaseEngine.add_to_registry(BloomLoraEngine.config_name, BloomLoraEngine)
 BaseEngine.add_to_registry(BloomInt8Engine.config_name, BloomInt8Engine)

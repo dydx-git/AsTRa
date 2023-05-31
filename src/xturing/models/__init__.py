@@ -1,6 +1,6 @@
 from .base import BaseModel
 from .bloom import Bloom, BloomInt8, BloomLora, BloomLoraInt8
-from .cerebras import Cerebras, CerebrasInt8, CerebrasLora, CerebrasLoraInt8
+from .cerebras import Cerebras, CerebrasInt8, CerebrasLora, CerebrasLoraInt8, CerebrasLargeLoraInt8
 from .distilgpt2 import DistilGPT2, DistilGPT2Lora
 from .flan import FlanSmallLora, FlanLargeLora, FlanUl2Lora
 from .galactica import Galactica, GalacticaInt8, GalacticaLora, GalacticaLoraInt8
@@ -40,6 +40,7 @@ BaseModel.add_to_registry(Cerebras.config_name, Cerebras)
 BaseModel.add_to_registry(CerebrasLora.config_name, CerebrasLora)
 BaseModel.add_to_registry(CerebrasInt8.config_name, CerebrasInt8)
 BaseModel.add_to_registry(CerebrasLoraInt8.config_name, CerebrasLoraInt8)
+BaseModel.add_to_registry(CerebrasLargeLoraInt8.config_name, CerebrasLargeLoraInt8)
 BaseModel.add_to_registry(Bloom.config_name, Bloom)
 BaseModel.add_to_registry(BloomLora.config_name, BloomLora)
 BaseModel.add_to_registry(BloomInt8.config_name, BloomInt8)
