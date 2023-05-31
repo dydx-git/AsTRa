@@ -29,6 +29,7 @@ class CausalEngine(BaseEngine):
         model: Optional[Any] = None,
         tokenizer: Optional[Any] = None,
         load_8bit: Optional[bool] = False,
+        trust_remote_code: Optional[bool] = False,
     ):
         self.model_name = model_name
 
@@ -43,13 +44,16 @@ class CausalEngine(BaseEngine):
                     torch_dtype=DEFAULT_DTYPE,
                     load_in_8bit=True,
                     device_map=device_map,
+                    trust_remote_code=trust_remote_code
                 )
                 self.model = prepare_model_for_int8_training(self.model)
             else:
                 self.model = AutoModelForCausalLM.from_pretrained(
-                    weights_path, torch_dtype=DEFAULT_DTYPE
+                    weights_path, torch_dtype=DEFAULT_DTYPE,
+                    trust_remote_code=trust_remote_code 
                 )
-            self.tokenizer = AutoTokenizer.from_pretrained(weights_path)
+            self.tokenizer = AutoTokenizer.from_pretrained(weights_path, 
+                    trust_remote_code=trust_remote_code)
         elif model is not None and tokenizer is not None:
             self.model = model
             self.tokenizer = tokenizer
@@ -61,13 +65,15 @@ class CausalEngine(BaseEngine):
                     torch_dtype=DEFAULT_DTYPE,
                     load_in_8bit=True,
                     device_map=device_map,
+                    trust_remote_code=trust_remote_code
                 )
                 for param in self.model.parameters():
                     param.data = param.data.contiguous()
                 self.model = prepare_model_for_int8_training(self.model)
             else:
                 self.model = AutoModelForCausalLM.from_pretrained(
-                    model_name, torch_dtype=DEFAULT_DTYPE
+                    model_name, torch_dtype=DEFAULT_DTYPE,
+                    trust_remote_code=trust_remote_code
                 )
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         else:

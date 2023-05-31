@@ -16,7 +16,7 @@ class MPTEngine(CausalEngine):
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(
-            model_name="santhosh97/gpt-mosaic-7b-int8", weights_path=weights_path
+            model_name="k0t1k/mosaicml-mpt-7b-instruct-lora", weights_path=weights_path, trust_remote_code = True
         )
 
         self.tokenizer.pad_token = self.tokenizer.eos_token
