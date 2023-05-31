@@ -1,6 +1,5 @@
 from xturing.registry import BaseParent
 
-
 class BaseEngine(BaseParent):
     pass
 

@@ -32,7 +32,7 @@ class FlanUl2LoraEngine(Seq2SeqLoraEngine):
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(
-            model_name="google/flan-t5-xxl",
+            model_name="google/flan-ul2",
             weights_path=weights_path,
             target_modules=["q", "v"],
         )

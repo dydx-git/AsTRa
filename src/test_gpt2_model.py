@@ -12,8 +12,7 @@ DATASET_OTHER_EXAMPLE_DICT = {
     "target": ["first text", "second text"],
 }
 
-model = BaseModel.create("flan_lora")
-
+model = BaseModel.create("google/flan-ul2")
 
 def test_text_gpt2():
     # Greedy search. Parameters are set to default config of HF
@@ -56,7 +55,6 @@ def test_text_dataset_gpt2_lora():
 
 def test_train_gpt2():
     dataset = TextDataset(DATASET_OTHER_EXAMPLE_DICT)
-    model = BaseModel.create("distilgpt2")
     finetuning_config = model.finetuning_config()
     finetuning_config.num_train_epochs = 1
     model.finetune(dataset=dataset)
@@ -100,3 +98,6 @@ def test_saving_loading_model_lora():
 
     model2 = BaseModel.load(str(saving_path))
     model2.generate(texts=["Why are the LLM so important?"])
+
+
+test_train_gpt2()
